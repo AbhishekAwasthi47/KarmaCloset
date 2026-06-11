@@ -1,0 +1,183 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800&display=swap');
+
+@layer base {
+  :root {
+    /* KarmaCloset earthy theme */
+    --background: 48 33% 97%;
+    --foreground: 140 25% 12%;
+
+    --card: 45 30% 98%;
+    --card-foreground: 140 25% 12%;
+
+    --popover: 45 30% 98%;
+    --popover-foreground: 140 25% 12%;
+
+    /* Forest green primary */
+    --primary: 123 29% 37%;
+    --primary-foreground: 45 50% 97%;
+
+    /* Sand secondary */
+    --secondary: 38 32% 88%;
+    --secondary-foreground: 140 25% 18%;
+
+    --muted: 44 22% 93%;
+    --muted-foreground: 140 12% 42%;
+
+    /* Sage accent */
+    --accent: 120 18% 86%;
+    --accent-foreground: 140 28% 18%;
+
+    --destructive: 0 72% 51%;
+    --destructive-foreground: 0 0% 98%;
+
+    --border: 42 20% 88%;
+    --input: 42 20% 88%;
+    --ring: 123 29% 37%;
+
+    --chart-1: 123 35% 42%;
+    --chart-2: 38 55% 56%;
+    --chart-3: 160 40% 38%;
+    --chart-4: 27 65% 58%;
+    --chart-5: 45 70% 52%;
+
+    --radius: 0.75rem;
+  }
+
+  .dark {
+    --background: 140 18% 8%;
+    --foreground: 44 25% 92%;
+
+    --card: 140 15% 11%;
+    --card-foreground: 44 25% 92%;
+
+    --popover: 140 15% 11%;
+    --popover-foreground: 44 25% 92%;
+
+    --primary: 123 32% 52%;
+    --primary-foreground: 140 25% 8%;
+
+    --secondary: 140 12% 18%;
+    --secondary-foreground: 44 25% 88%;
+
+    --muted: 140 12% 16%;
+    --muted-foreground: 44 15% 58%;
+
+    --accent: 120 15% 22%;
+    --accent-foreground: 44 25% 88%;
+
+    --destructive: 0 60% 42%;
+    --destructive-foreground: 0 0% 98%;
+
+    --border: 140 12% 20%;
+    --input: 140 12% 20%;
+    --ring: 123 32% 52%;
+
+    --chart-1: 123 40% 55%;
+    --chart-2: 38 50% 52%;
+    --chart-3: 160 38% 48%;
+    --chart-4: 27 60% 55%;
+    --chart-5: 45 65% 55%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    @apply bg-background text-foreground font-sans antialiased;
+    font-feature-settings: 'kern' 1, 'liga' 1;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-semibold tracking-tight;
+  }
+}
+
+@layer utilities {
+  .glass {
+    background: rgba(255, 255, 255, 0.6);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border: 1px solid rgba(255, 255, 255, 0.3);
+  }
+
+  .glass-dark {
+    background: rgba(26, 51, 32, 0.6);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+  }
+
+  .card-lift {
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+  }
+
+  .card-lift:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.12);
+  }
+
+  .text-balance {
+    text-wrap: balance;
+  }
+
+  .karma-badge {
+    @apply inline-flex items-center gap-1 px-2 py-0.5 rounded-full text-xs font-medium;
+    background: rgba(67, 125, 71, 0.12);
+    color: #316337;
+    border: 1px solid rgba(67, 125, 71, 0.2);
+  }
+
+  .inr {
+    font-feature-settings: 'tnum';
+  }
+
+  .scrollbar-hide {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+  }
+
+  .scrollbar-hide::-webkit-scrollbar {
+    display: none;
+  }
+
+  .masonry-grid {
+    columns: 2;
+    column-gap: 12px;
+  }
+
+  @media (min-width: 640px) {
+    .masonry-grid {
+      columns: 3;
+      column-gap: 16px;
+    }
+  }
+
+  @media (min-width: 1024px) {
+    .masonry-grid {
+      columns: 4;
+      column-gap: 20px;
+    }
+  }
+
+  .masonry-item {
+    break-inside: avoid;
+    margin-bottom: 12px;
+  }
+
+  @media (min-width: 640px) {
+    .masonry-item {
+      margin-bottom: 16px;
+    }
+  }
+}
